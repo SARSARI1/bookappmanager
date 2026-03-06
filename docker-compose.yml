@@ -29,3 +29,11 @@ services:
       - "4200:4200"
     depends_on:
       - backend
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8086:8080"
+    depends_on:
+      - db
