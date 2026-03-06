@@ -1,0 +1,64 @@
+<div class="app-wrapper">
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="topbar">
+      <div>
+        <h1 class="page-title">Book Inventory</h1>
+        <p class="page-sub">Manage your collection with ease</p>
+      </div>
+      <div class="topbar-right">
+        <span class="badge">{{ books.length }} Books</span>
+      </div>
+    </header>
+
+    <!-- Add Book Card -->
+    <section class="card add-card">
+      <h2 class="card-title">➕ Add New Book</h2>
+      <div class="form-row">
+        <div class="input-group">
+          <label>Title</label>
+          <input [(ngModel)]="newBook.title" placeholder="e.g. The Great Gatsby" />
+        </div>
+        <div class="input-group">
+          <label>Author</label>
+          <input [(ngModel)]="newBook.author" placeholder="e.g. F. Scott Fitzgerald" />
+        </div>
+        <button class="btn-primary" (click)="addBook()">Add Book</button>
+      </div>
+    </section>
+
+    <!-- Book List -->
+    <section class="card">
+      <h2 class="card-title">📋 Collection</h2>
+
+      <div *ngIf="books.length === 0" class="empty-state">
+        <p>🔍 No books yet. Start by adding one above.</p>
+      </div>
+
+      <table *ngIf="books.length > 0" class="book-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books; let i = index">
+            <td class="index">{{ i + 1 }}</td>
+            <td class="title">{{ book.title }}</td>
+            <td class="author">{{ book.author }}</td>
+            <td>
+              <button class="btn-delete" (click)="deleteBook(book.id!)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+</div>

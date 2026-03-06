@@ -1,0 +1,72 @@
+# =============================
+# Angular / Node.js
+# =============================
+
+# Node modules
+/node_modules/
+# Optional npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+/dist/
+/out-tsc/
+/coverage/
+/.angular/
+
+# Environment files (if you keep secrets)
+src/environments/*.ts
+!src/environments/environment.example.ts
+
+# Angular IDE / cache files
+/.idea/
+/.vscode/
+/*.sublime-workspace
+/*.sublime-project
+
+# =============================
+# Spring Boot / Java / Maven
+# =============================
+
+# Maven build folder
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/build/
+!mvnw
+!mvnw.cmd
+
+# Eclipse / IntelliJ / NetBeans project files
+/.classpath
+/.project
+/.settings/
+/.idea/
+/*.iml
+/*.ipr
+/*.iws
+/out/
+
+# Logs
+*.log
+
+# =============================
+# Docker
+# =============================
+
+# Ignore images / build artifacts (optional)
+docker-compose.override.yml
+**/Dockerfile.build
+
+# =============================
+# OS / Editor files
+# =============================
+
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.bak
